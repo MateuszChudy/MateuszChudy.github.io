@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateusz Chudy - Piłka nożna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Witryna Internetowa</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="football.html">Piłka nożna</a></li>
+                <li><a href="martial_arts.html">Sztuki walki</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="currentDate"></div><div id="clock"></div>
+        <center>
+            <h2>Piłka nożna</h2>
+            <p>Od dziecka grałem w piłkę nożną z kolegami.</p>
+            <p>Moim ulubionym klubem piłkarskim jest Real Madryt. Hala <a href="https://www.realmadryt.pl" target = "_blank">Madrid</a>!</p>
+            <img src="img/real_madryt.jpg" alt="logo Realu Madryt">
+        </center>
+    </main>
+
+    <script>
+        var currentDateElement = document.getElementById("currentDate");
+        var currentDate = new Date();
+        currentDateElement.innerHTML = "Dzisiejsza data " + currentDate.toLocaleDateString();
+
+        function updateClock() {
+            var currentDate = new Date();
+            var clockElement = document.getElementById("clock");
+            var hours = currentDate.getHours().toString().padStart(2, "0");
+            var minutes = currentDate.getMinutes().toString().padStart(2, "0");
+            var seconds = currentDate.getSeconds().toString().padStart(2, "0");
+            clockElement.innerHTML = "Aktualna godzina: " + hours + ":" + minutes + ":" + seconds;
+        }
+
+        setInterval(updateClock, 1000);
+
+        updateClock();
+    </script>
+</body>
+</html>
